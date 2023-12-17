@@ -16,4 +16,4 @@ steps:
       - ./build.sh
     when:
       branch: ${CI_REPO_DEFAULT_BRANCH}
-      event: [pull_request, push]
+      event: push
