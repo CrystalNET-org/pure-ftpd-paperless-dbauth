@@ -62,32 +62,28 @@ func main() {
 
 	var connStr string
 	var db *sql.DB
+	var err error
 
 	switch dbEngine {
 	case "postgres":
 		connStr = fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
 			dbHost, dbPort, dbUser, dbPassword, dbName)
-		db, err := sql.Open("postgres", connStr)
-		if err != nil {
-			debugPrint(fmt.Sprintf("Failed to open PostgreSQL database: %v", err))
-			fmt.Print(failedAuthFatalError)
-			return
-		}
-		defer db.Close()
+		db, err = sql.Open("postgres", connStr)
 	case "mysql", "mariadb":
 		connStr = fmt.Sprintf("%s:%s@tcp(%s:%s)/%s", dbUser, dbPassword, dbHost, dbPort, dbName)
-		db, err := sql.Open("mysql", connStr)
-		if err != nil {
-			debugPrint(fmt.Sprintf("Failed to open MySQL/MariaDB database: %v", err))
-			fmt.Print(failedAuthFatalError)
-			return
-		}
-		defer db.Close()
+		db, err = sql.Open("mysql", connStr)
 	default:
 		debugPrint(fmt.Sprintf("Unsupported database engine: %s", dbEngine))
 		fmt.Print(failedAuthFatalError)
 		return
 	}
+
+	if err != nil {
+		debugPrint(fmt.Sprintf("Failed to open database connection: %v", err))
+		fmt.Print(failedAuthFatalError)
+		return
+	}
+	defer db.Close()
 
 	// Query the database for the stored credentials
 	rows, err := db.Query("SELECT username, password FROM auth_user WHERE username = ?", username)
