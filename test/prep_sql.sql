@@ -21,9 +21,9 @@ INSERT INTO auth_user (
 ) VALUES (
     'test',
     'pbkdf2_sha256$600000$CnXZ9qTrJgeWud9H8I2jTQ$2XOeBEncB0aehGZhC2avZW5J2+BpN3iy24+Y9Jic2go=',
-    'false',
-    'false',
-    'true',
+    '0',
+    '0',
+    '1',
     NOW()
 )
 -- password == testpassword
