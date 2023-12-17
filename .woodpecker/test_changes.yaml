@@ -15,11 +15,17 @@ services:
     ports:
       - 5432
 steps:
-  prepare_databases:
+  prepare_mysql_database:
+    image: mysql
+    commands:
+      - test/prepare_mysql.sh
+    when:
+      branch: ${CI_REPO_DEFAULT_BRANCH}
+      event: [pull_request, push]
+  prepare_postgresql_database:
     image: postgres
     commands:
       - test/prepare_postgresql.sh
-      - test/prepare_mysql.sh
     environment:
       - PGPASSWORD=example
     when:
