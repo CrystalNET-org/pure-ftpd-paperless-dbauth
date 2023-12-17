@@ -37,7 +37,7 @@ func main() {
 
 	if username == "" || password == "" {
 		fmt.Print(failedAuthFatalError)
-		return
+		os.Exit(1)
 	}
 
 	// Read DEBUG environment variable
@@ -57,7 +57,7 @@ func main() {
 	if dbHost == "" || dbPort == "" || dbName == "" || dbUser == "" || dbPassword == "" || dbEngine == "" {
 		debugPrint("Database configuration is incomplete.")
 		fmt.Print(failedAuthFatalError)
-		return
+		os.Exit(1)
 	}
 
 	var connStr string
@@ -75,13 +75,13 @@ func main() {
 	default:
 		debugPrint(fmt.Sprintf("Unsupported database engine: %s", dbEngine))
 		fmt.Print(failedAuthFatalError)
-		return
+		os.Exit(1)
 	}
 
 	if err != nil {
 		debugPrint(fmt.Sprintf("Failed to open database connection: %v", err))
 		fmt.Print(failedAuthFatalError)
-		return
+		os.Exit(1)
 	}
 	defer db.Close()
 
@@ -90,7 +90,7 @@ func main() {
 	if err != nil {
 		debugPrint(fmt.Sprintf("Failed to execute database query: %v", err))
 		fmt.Print(failedAuthFatalError)
-		return
+		os.Exit(1)
 	}
 	defer rows.Close()
 
@@ -101,7 +101,7 @@ func main() {
 		if err != nil {
 			debugPrint(fmt.Sprintf("Failed to scan database row: %v", err))
 			fmt.Print(failedAuthFatalError)
-			return
+			os.Exit(1)
 		}
 
 		// Extract parameters from the stored hash
@@ -112,7 +112,7 @@ func main() {
 		if err != nil {
 			debugPrint(fmt.Sprintf("Failed to convert iterations to integer: %v", err))
 			fmt.Print(failedAuthFatalError)
-			return
+			os.Exit(1)
 		}
 
 		salt := parts[2]
@@ -131,21 +131,21 @@ func main() {
 			if err != nil {
 				debugPrint(fmt.Sprintf("Failed to get current user information: %v", err))
 				fmt.Print(failedAuthFatalError)
-				return
+				os.Exit(1)
 			}
 
 			uid, err := strconv.Atoi(currentUser.Uid)
 			if err != nil {
 				debugPrint(fmt.Sprintf("Failed to convert UID to integer: %v", err))
 				fmt.Print(failedAuthFatalError)
-				return
+				os.Exit(1)
 			}
 
 			gid, err := strconv.Atoi(currentUser.Gid)
 			if err != nil {
 				debugPrint(fmt.Sprintf("Failed to convert GID to integer: %v", err))
 				fmt.Print(failedAuthFatalError)
-				return
+				os.Exit(1)
 			}
 
 			// Get the consumption directory from the environment variable
@@ -153,17 +153,18 @@ func main() {
 			if consumptionDir == "" {
 				debugPrint("PAPERLESS_CONSUMPTION_DIR is not set.")
 				fmt.Print(failedAuthFatalError)
-				return
+				os.Exit(1)
 			}
 
 			// Print the successful authentication response
 			fmt.Printf(successfulAuthResponse, uid, gid, consumptionDir)
+			os.Exit(0)
 		} else {
 			debugPrint("Password verification failed.")
-			fmt.Print(failedAuthFatalError)
+			os.Exit(1)
 		}
 	} else {
 		debugPrint("User not found in the database.")
-		fmt.Print(failedAuthNotFound)
+		os.Exit(1)
 	}
 }
