@@ -10,7 +10,7 @@ services:
       - MYSQL_DATABASE=test
       - POSTGRES_PASSWORD=example
 steps:
-  docker-test-pureftpd-authd-plugin:
+  build-test-pureftpd-authd-plugin:
     image: golang:1.21.5
     commands:
       - ./build.sh

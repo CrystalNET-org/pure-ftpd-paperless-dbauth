@@ -1,5 +1,5 @@
 steps:
-  docker-build-pureftpd-authd-plugin:
+  build-pureftpd-authd-plugin:
     image: golang:1.21.5
     commands:
       - ./build.sh
