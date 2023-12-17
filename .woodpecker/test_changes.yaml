@@ -1,12 +1,12 @@
 services:
-  database_mysql:
+  database-mysql:
     image: mysql
     environment:
       - MYSQL_DATABASE=test
       - MYSQL_ROOT_PASSWORD=example
     ports:
       - 3306
-  database_pgsql:
+  database-pgsql:
     image: postgres
     environment:
       - MYSQL_DATABASE=test
