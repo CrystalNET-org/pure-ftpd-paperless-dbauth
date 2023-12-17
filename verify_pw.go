@@ -86,7 +86,7 @@ func main() {
 	defer db.Close()
 
 	// Query the database for the stored credentials
-	rows, err := db.Query("SELECT username, password FROM auth_user WHERE username = ?", username)
+	rows, err := db.Query("SELECT username, password FROM auth_user WHERE username = $1", username)
 	if err != nil {
 		debugPrint(fmt.Sprintf("Failed to execute database query: %v", err))
 		fmt.Print(failedAuthFatalError)
