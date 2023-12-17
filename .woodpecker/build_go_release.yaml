@@ -1,0 +1,8 @@
+steps:
+  docker-build-pureftpd-authd-plugin:
+    image: golang:1.21.5
+    commands:
+      - ./build.sh
+    when:
+      branch: ${CI_REPO_DEFAULT_BRANCH}
+      event: push
