@@ -18,7 +18,7 @@ steps:
   prepare_postgresql_database:
     image: postgres
     commands:
-      - psql -d test -p 5432 -U test -f .woodpecker/sql/prep_psql.sql
+      - psql -d test -p 5432 -U test -f ./sql/prep_psql.sql
     environment:
       - PGPASSWORD=example
     when:
