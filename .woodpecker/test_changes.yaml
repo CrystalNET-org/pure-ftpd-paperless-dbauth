@@ -9,15 +9,25 @@ services:
   database-pgsql:
     image: postgres
     environment:
-      - MYSQL_DATABASE=test
+      - POSTGRES_DB=test
       - POSTGRES_PASSWORD=example
+      - POSTGRES_USER=test
     ports:
       - 5432
 steps:
+  prepare_postgresql_database:
+    image: postgres
+    commands:
+      - psql -d test -p 5432 -U test -f .woodpecker/sql/prep_psql.sql
+    environment:
+      - PGPASSWORD=example
+    when:
+      branch: ${CI_REPO_DEFAULT_BRANCH}
+      event: [pull_request, push]
   build-test-pureftpd-authd-plugin:
     image: golang:1.21.5
     commands:
       - ./build.sh
     when:
       branch: ${CI_REPO_DEFAULT_BRANCH}
-      event: push
+      event: [pull_request, push]
