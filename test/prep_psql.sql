@@ -26,4 +26,4 @@ INSERT INTO auth_user (
     'true',
     NOW()
 )
-password == testpassword
+-- password == testpassword
