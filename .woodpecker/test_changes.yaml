@@ -15,10 +15,11 @@ services:
     ports:
       - 5432
 steps:
-  prepare_postgresql_database:
+  prepare_databases:
     image: postgres
     commands:
       - test/prepare_postgresql.sh
+      - test/prepare_mysql.sh
     environment:
       - PGPASSWORD=example
     when:
