@@ -6,7 +6,6 @@ import (
 	"encoding/base64"
 	"fmt"
 	"os"
-	"os/user"
 	"strconv"
 	"strings"
 
@@ -165,20 +164,9 @@ func getDatabaseQuery(engine, username string) (string, []interface{}) {
 }
 
 func getCurrentUserIDs() (int, int) {
-	currentUser, err := user.Current()
-	if err != nil {
-		handleError("Failed to get current user information", failedAuthFatalError)
-	}
-
-	uid, err := strconv.Atoi(currentUser.Uid)
-	if err != nil {
-		handleError("Failed to convert UID to integer", failedAuthFatalError)
-	}
-
-	gid, err := strconv.Atoi(currentUser.Gid)
-	if err != nil {
-		handleError("Failed to convert GID to integer", failedAuthFatalError)
-	}
+	// Obtain the UID and GID of the current process
+	uid := os.Getuid()
+	gid := os.Getgid()
 
 	return uid, gid
 }
