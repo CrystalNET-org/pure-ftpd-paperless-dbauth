@@ -31,3 +31,10 @@ steps:
     when:
       branch: ${CI_REPO_DEFAULT_BRANCH}
       event: [pull_request, push]
+  test-authentication:
+    image: golang:1.21.5
+    commands:
+      - test/test_pw.sh
+    when:
+      branch: ${CI_REPO_DEFAULT_BRANCH}
+      event: [pull_request, push]
