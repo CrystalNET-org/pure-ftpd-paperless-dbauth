@@ -18,6 +18,7 @@ steps:
   prepare_postgresql_database:
     image: postgres
     commands:
+      - sleep 30s
       - psql -d test -p 5432 -U test -f ./sql/prep_psql.sql
     environment:
       - PGPASSWORD=example
