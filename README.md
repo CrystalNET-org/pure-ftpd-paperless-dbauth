@@ -1,4 +1,5 @@
 # Pure-FTPd Authd Database Authenticator
+[![status-badge](https://ci.cluster.lan.crystalnet.org/api/badges/5/status.svg)](https://ci.cluster.lan.crystalnet.org/repos/5)
 
 This small Go program is designed to be plugged into Pure-FTPd's authd program, providing authentication against a Paperless-NGX MariaDB or PostgreSQL database.
 
