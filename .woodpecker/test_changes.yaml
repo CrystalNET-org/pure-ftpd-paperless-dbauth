@@ -4,11 +4,15 @@ services:
     environment:
       - MYSQL_DATABASE=test
       - MYSQL_ROOT_PASSWORD=example
+    ports:
+      - 3306
   database_pgsql:
     image: postgres
     environment:
       - MYSQL_DATABASE=test
       - POSTGRES_PASSWORD=example
+    ports:
+      - 5432
 steps:
   build-test-pureftpd-authd-plugin:
     image: golang:1.21.5
