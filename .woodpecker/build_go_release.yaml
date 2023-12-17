@@ -6,7 +6,7 @@ steps:
     when:
       branch: ${CI_REPO_DEFAULT_BRANCH}
       event: [push, tag]
-  release:
+  release-to-github:
     image: woodpeckerci/plugin-github-release
     settings:
       files:
