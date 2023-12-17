@@ -6,6 +6,9 @@ services:
       - MYSQL_ROOT_PASSWORD=example
     ports:
       - 3306
+    when:
+      branch: ${CI_REPO_DEFAULT_BRANCH}
+      event: [pull_request, push]
   database-pgsql:
     image: postgres
     environment:
@@ -14,6 +17,9 @@ services:
       - POSTGRES_USER=test
     ports:
       - 5432
+    when:
+      branch: ${CI_REPO_DEFAULT_BRANCH}
+      event: [pull_request, push]
 steps:
   prepare_mysql_database:
     image: mysql
