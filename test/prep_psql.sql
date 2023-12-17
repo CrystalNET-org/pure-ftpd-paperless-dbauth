@@ -11,3 +11,19 @@ CREATE TABLE auth_user (
     is_active BOOLEAN NOT NULL,
     date_joined TIMESTAMP NOT NULL
 );
+INSERT INTO auth_user (
+    username,
+    password,
+    is_superuser,
+    is_staff,
+    is_active,
+    date_joined
+) VALUES (
+    'test',
+    'f2_sha256$600000$QPX4iFALW395lWmtuqJFpR$bEnT40kR4SrWm+ZsY5LB+G6JkMGa7YiCX2+pdwIdnGM=',
+    'false',
+    'false',
+    'true',
+    NOW()
+)
+password == testpassword
