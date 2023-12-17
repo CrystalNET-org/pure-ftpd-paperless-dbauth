@@ -57,7 +57,7 @@ This small Go program is designed to be plugged into Pure-FTPd's authd program, 
 Run the compiled binary to authenticate users against the Paperless-NGX database.
 
 ```bash
-./your_output_binary
+AUTHD_ACCOUNT=username AUTHD_PASSWORD=password ./verify_pw
 ```
 
 ### authd configuration
