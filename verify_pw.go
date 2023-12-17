@@ -130,7 +130,7 @@ func getDatabaseConfig() (string, string, string, string, string, string) {
 func openDatabaseConnection(engine, host, port, user, password, name string) (*sql.DB, error) {
 	var connStr string
 	switch engine {
-	case "postgres":
+	case "postgres", "postgresql":
 		connStr = fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable", host, port, user, password, name)
 	case "mysql", "mariadb":
 		connStr = fmt.Sprintf("%s:%s@tcp(%s:%s)/%s", user, password, host, port, name)
@@ -148,7 +148,7 @@ func getDatabaseQuery(engine, username string) (string, []interface{}) {
 	var queryArgs []interface{}
 
 	switch engine {
-	case "postgres":
+	case "postgres", "postgresql":
 		query = "SELECT username, password FROM auth_user WHERE username = $1"
 		queryArgs = []interface{}{username}
 	case "mysql", "mariadb":
