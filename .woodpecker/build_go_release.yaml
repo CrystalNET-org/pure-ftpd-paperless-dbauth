@@ -6,3 +6,14 @@ steps:
     when:
       branch: ${CI_REPO_DEFAULT_BRANCH}
       event: push
+  release:
+    image: woodpeckerci/plugin-github-release
+    settings:
+      files:
+        - out/verify_pw*
+      title: ${CI_COMMIT_TAG##v}
+      api-key:
+        from_secret: github_token
+    when:
+      branch: ${CI_REPO_DEFAULT_BRANCH}
+      event: tag

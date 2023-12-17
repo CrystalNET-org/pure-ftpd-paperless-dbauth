@@ -9,21 +9,24 @@ BINARY_NAME="verify_pw"
 
 # Set the platform and architecture
 PLATFORM="linux"
-ARCHITECTURE="amd64"
+ARCHITECTURES=("amd64" "386" "arm64" "arm")
 
 # Enable Go Modules
 export GO111MODULE=on
 
 mkdir ./out
 
-env GOOS=$PLATFORM GOARCH=$ARCHITECTURE go mod tidy
+for ARCH in "${ARCHITECTURES[@]}"
+do
+    env GOOS=${PLATFORM} GOARCH="${ARCH}" go mod tidy
+    # Build the binary
+    env GOOS=${PLATFORM} GOARCH="${ARCH}" go build -o "./out/${BINARY_NAME}_${ARCH}" ${SCRIPT_NAME}
+    # Check if the build was successful
+    if [ $? -eq 0 ]; then
+        echo "Build successful! The binary is named '${BINARY_NAME}_${ARCH}' in the ./out directory"
+    else
+        echo "Build failed!"
+    fi
+done
 
-# Build the binary
-env GOOS=$PLATFORM GOARCH=$ARCHITECTURE go build -o ./out/$BINARY_NAME $SCRIPT_NAME
 
-# Check if the build was successful
-if [ $? -eq 0 ]; then
-    echo "Build successful! The binary is named '$BINARY_NAME'"
-else
-    echo "Build failed!"
-fi
