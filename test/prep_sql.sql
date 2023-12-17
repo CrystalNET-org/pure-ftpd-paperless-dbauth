@@ -20,7 +20,7 @@ INSERT INTO auth_user (
     date_joined
 ) VALUES (
     'test',
-    'pbkdf2_sha256$600000$QPX4iFALW395lWmtuqJFpR$bEnT40kR4SrWm+ZsY5LB+G6JkMGa7YiCX2+pdwIdnGM=',
+    'pbkdf2_sha256$600000$CnXZ9qTrJgeWud9H8I2jTQ$2XOeBEncB0aehGZhC2avZW5J2+BpN3iy24+Y9Jic2go=',
     'false',
     'false',
     'true',
