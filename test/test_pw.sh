@@ -7,7 +7,7 @@ timeout 22 bash -c 'until printf "" 2>>/dev/null >>/dev/tcp/$0/$1; do sleep 1; d
 
 export PAPERLESS_DBHOST=${psql_host}
 export PAPERLESS_DBPORT="5432"
-export PAPERLESS_DBNAME=${POSTGRES_DB}
+export PAPERLESS_DBNAME="test"
 export DB_USER="test"
 export PAPERLESS_DBPASS="example"
 export PAPERLESS_DBENGINE="postgres"  # or "mysql" for MariaDB
