@@ -16,4 +16,4 @@ export PAPERLESS_CONSUMPTION_DIR="/directory"
 export AUTHD_ACCOUNT=test
 export AUTHD_PASSWORD=testpassword
 
-out/verify_pw_amd64
+DEBUG=true out/verify_pw_amd64
