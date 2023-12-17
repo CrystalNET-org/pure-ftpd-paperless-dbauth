@@ -132,6 +132,7 @@ func openDatabaseConnection(engine, host, port, user, password, name string) (*s
 	switch engine {
 	case "postgres", "postgresql":
 		connStr = fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable", host, port, user, password, name)
+		engine = "postgres"
 	case "mysql", "mariadb":
 		connStr = fmt.Sprintf("%s:%s@tcp(%s:%s)/%s", user, password, host, port, name)
 	default:
