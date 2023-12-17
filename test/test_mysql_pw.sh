@@ -8,7 +8,7 @@ timeout 22 bash -c 'until printf "" 2>>/dev/null >>/dev/tcp/$0/$1; do sleep 1; d
 export PAPERLESS_DBHOST=${mysql_host}
 export PAPERLESS_DBPORT="3306"
 export PAPERLESS_DBNAME="test"
-export DB_USER="test"
+export DB_USER="root"
 export PAPERLESS_DBPASS="example"
 export PAPERLESS_DBENGINE="mysql"  # or "mysql" for MariaDB
 export PAPERLESS_CONSUMPTION_DIR="/directory"
