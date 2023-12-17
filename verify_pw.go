@@ -86,11 +86,27 @@ func main() {
 	defer db.Close()
 
 	// Query the database for the stored credentials
-	rows, err := db.Query("SELECT username, password FROM auth_user WHERE username = $1", username)
+	var query string
+	var queryArgs []interface{}
+
+	switch dbEngine {
+	case "postgres":
+		query = "SELECT username, password FROM auth_user WHERE username = $1"
+		queryArgs = []interface{}{username}
+	case "mysql", "mariadb":
+		query = "SELECT username, password FROM auth_user WHERE username = ?"
+		queryArgs = []interface{}{username}
+	default:
+		debugPrint(fmt.Sprintf("Unsupported database engine: %s", dbEngine))
+		fmt.Print(failedAuthFatalError)
+		os.Exit(1) // Exit with code 1 for fatal error
+	}
+
+	rows, err := db.Query(query, queryArgs...)
 	if err != nil {
 		debugPrint(fmt.Sprintf("Failed to execute database query: %v", err))
 		fmt.Print(failedAuthFatalError)
-		os.Exit(1)
+		os.Exit(1) // Exit with code 1 for fatal error
 	}
 	defer rows.Close()
 
