@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 # Set the name of your Go script
 SCRIPT_NAME="verify_pw.go"
 
