@@ -21,13 +21,13 @@ This small Go program is designed to be plugged into Pure-FTPd's authd program, 
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/ftp-authenticator.git
+    git clone https://github.com/psych0d0g/pure-ftpd-paperless-dbauth.git
     ```
 
 2. Change into the project directory:
 
     ```bash
-    cd ftp-authenticator
+    cd pure-ftpd-paperless-dbauth
     ```
 
 3. Run the build script to compile the binary:
