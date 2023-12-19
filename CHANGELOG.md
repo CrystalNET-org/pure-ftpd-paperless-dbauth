@@ -4,10 +4,12 @@
 
 ### ❤️ Thanks to all contributors! ❤️
 
-@Lukas Wingerberg, @psych0d0g, @dependabot[bot]
+@psych0d0g, @Lukas Wingerberg, @dependabot[bot]
 
 ### Misc
 
+- 🎉 Release 0.0.5 [[#10](https://github.com/psych0d0g/pure-ftpd-paperless-dbauth/pull/10)]
+- 🎉 Release 0.0.5 [[#10](https://github.com/psych0d0g/pure-ftpd-paperless-dbauth/pull/10)]
 - add release-config.ts ([e7351bf](https://github.com/psych0d0g/pure-ftpd-paperless-dbauth/commit/e7351bfc1c93ed60f5bf8f59bddc5fc3a68923a0))
 - 🎉 Release 0.0.5 [[#9](https://github.com/psych0d0g/pure-ftpd-paperless-dbauth/pull/9)]
 - limit to push to mby not run jobs twice? ([db80d5a](https://github.com/psych0d0g/pure-ftpd-paperless-dbauth/commit/db80d5a5b1cdab007378ac750d0690b5a39f727c))
