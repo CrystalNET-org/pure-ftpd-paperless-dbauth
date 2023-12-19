@@ -8,6 +8,7 @@
 
 ### Misc
 
+- fix binary names from build ([2e70e1b](https://github.com/psych0d0g/pure-ftpd-paperless-dbauth/commit/2e70e1b0a89272cddbe238d2f5d1dceeeeffe458))
 - move env vars infront of build commands ([4adba67](https://github.com/psych0d0g/pure-ftpd-paperless-dbauth/commit/4adba673d8938533b56540a14ac24cad49e3075a))
 - fix env var names ([c34c2bf](https://github.com/psych0d0g/pure-ftpd-paperless-dbauth/commit/c34c2bfaf7c360cedee4f0d526027ecb5167ea02))
 - more paralellization ([75a7d2c](https://github.com/psych0d0g/pure-ftpd-paperless-dbauth/commit/75a7d2cab17838ca562ea872172f95af686e1f96))
