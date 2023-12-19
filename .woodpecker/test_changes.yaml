@@ -1,3 +1,6 @@
+when:
+  branch: ${CI_REPO_DEFAULT_BRANCH}
+  event: [pull_request]
 services:
   database-mysql:
     image: mysql
@@ -6,9 +9,6 @@ services:
       - MYSQL_ROOT_PASSWORD=example
     ports:
       - 3306
-    when:
-      branch: ${CI_REPO_DEFAULT_BRANCH}
-      event: [pull_request, push]
   database-pgsql:
     image: postgres
     environment:
@@ -17,38 +17,23 @@ services:
       - POSTGRES_USER=test
     ports:
       - 5432
-    when:
-      branch: ${CI_REPO_DEFAULT_BRANCH}
-      event: [pull_request, push]
 steps:
   prepare_mysql_database:
     image: mysql
     commands:
       - test/prepare_mysql.sh
-    when:
-      branch: ${CI_REPO_DEFAULT_BRANCH}
-      event: [pull_request, push]
   prepare_postgresql_database:
     image: postgres
     commands:
       - test/prepare_postgresql.sh
     environment:
       - PGPASSWORD=example
-    when:
-      branch: ${CI_REPO_DEFAULT_BRANCH}
-      event: [pull_request, push]
   build-test-pureftpd-authd-plugin:
     image: golang:1.21.5
     commands:
       - ./build.sh
-    when:
-      branch: ${CI_REPO_DEFAULT_BRANCH}
-      event: [pull_request, push]
   test-authentication:
     image: golang:1.21.5
     commands:
       - test/test_pgsql_pw.sh
       - test/test_mysql_pw.sh
-    when:
-      branch: ${CI_REPO_DEFAULT_BRANCH}
-      event: [pull_request, push]
