@@ -4,10 +4,11 @@
 
 ### ❤️ Thanks to all contributors! ❤️
 
-@Lukas Wingerberg
+@Psych0D0g, @Lukas Wingerberg
 
 ### Misc
 
+- build and test on PR ([c488d93](https://github.com/psych0d0g/pure-ftpd-paperless-dbauth/commit/c488d931ba3488e388dd7bfaa717248c856e8cf8))
 - Update README.md ([e3365cd](https://github.com/psych0d0g/pure-ftpd-paperless-dbauth/commit/e3365cd7864a5ca7e281699f331b0b8967c4caaf))
 
 ## [0.0.5](https://github.com/psych0d0g/pure-ftpd-paperless-dbauth/releases/tag/0.0.5) - 2023-12-19
