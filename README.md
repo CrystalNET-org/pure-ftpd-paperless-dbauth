@@ -94,7 +94,7 @@ CREATE TABLE auth_user (
 
 ### Contributing
 
-Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
+i am open to any improvement suggestions via issues or pull reqests
 
 ### License
 
