@@ -2,43 +2,31 @@ steps:
   build-pureftpd-authd-plugin_x86_64:
     group: build_binaries
     image: golang:1.21.5
-    environment:
-      - GOOS=linux
-      - GOARCH=amd64
     commands:
       - mkdir -p ./out
-      - go mod tidy
-      - go build -o "./out/verify_pw_${GOARCH}" verify_pw.go
+      - GOOS=linux GOARCH=amd64 go mod tidy
+      - GOOS=linux GOARCH=amd64 go build -o "./out/verify_pw_${GOARCH}" verify_pw.go
   build-pureftpd-authd-plugin_x86:
     group: build_binaries
     image: golang:1.21.5
-    environment:
-      - GOOS=linux
-      - GOARCH=386
     commands:
       - mkdir -p ./out
-      - go mod tidy
-      - go build -o "./out/verify_pw_${GOARCH}" verify_pw.go
+      - GOOS=linux GOARCH=386 go mod tidy
+      - GOOS=linux GOARCH=386 go build -o "./out/verify_pw_${GOARCH}" verify_pw.go
   build-pureftpd-authd-plugin_arm64:
     group: build_binaries
     image: golang:1.21.5
-    environment:
-      - GOOS=linux
-      - GOARCH=arm64
     commands:
       - mkdir -p ./out
-      - go mod tidy
-      - go build -o "./out/verify_pw_${GOARCH}" verify_pw.go
+      - GOOS=linux GOARCH=arm64 go mod tidy
+      - GOOS=linux GOARCH=arm64 go build -o "./out/verify_pw_${GOARCH}" verify_pw.go
   build-pureftpd-authd-plugin_arm:
     group: build_binaries
     image: golang:1.21.5
-    environment:
-      - GOOS=linux
-      - GOARCH=arm
     commands:
       - mkdir -p ./out
-      - go mod tidy
-      - go build -o "./out/verify_pw_${GOARCH}" verify_pw.go
+      - GOOS=linux GOARCH=arm go mod tidy
+      - GOOS=linux GOARCH=arm go build -o "./out/verify_pw_${GOARCH}" verify_pw.go
   release-to-github:
     image: woodpeckerci/plugin-github-release
     settings:
