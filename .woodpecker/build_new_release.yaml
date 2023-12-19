@@ -6,7 +6,7 @@ steps:
       - GOOS=linux
       - GOARCH=amd64
     commands:
-      - mkdir ./out
+      - mkdir -p ./out
       - go mod tidy
       - go build -o "./out/verify_pw_${ARCH}" verify_pw.go
   build-pureftpd-authd-plugin_x86:
@@ -16,7 +16,7 @@ steps:
       - GOOS=linux
       - GOARCH=386
     commands:
-      - mkdir ./out
+      - mkdir -p ./out
       - go mod tidy
       - go build -o "./out/verify_pw_${ARCH}" verify_pw.go
   build-pureftpd-authd-plugin_arm64:
@@ -26,7 +26,7 @@ steps:
       - GOOS=linux
       - GOARCH=arm64
     commands:
-      - mkdir ./out
+      - mkdir -p ./out
       - go mod tidy
       - go build -o "./out/verify_pw_${ARCH}" verify_pw.go
   build-pureftpd-authd-plugin_arm:
@@ -36,7 +36,7 @@ steps:
       - GOOS=linux
       - GOARCH=arm
     commands:
-      - mkdir ./out
+      - mkdir -p ./out
       - go mod tidy
       - go build -o "./out/verify_pw_${ARCH}" verify_pw.go
   release-to-github:
