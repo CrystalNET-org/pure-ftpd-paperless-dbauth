@@ -8,7 +8,7 @@ steps:
     commands:
       - mkdir -p ./out
       - go mod tidy
-      - go build -o "./out/verify_pw_${ARCH}" verify_pw.go
+      - go build -o "./out/verify_pw_${GOARCH}" verify_pw.go
   build-pureftpd-authd-plugin_x86:
     group: build_binaries
     image: golang:1.21.5
@@ -18,7 +18,7 @@ steps:
     commands:
       - mkdir -p ./out
       - go mod tidy
-      - go build -o "./out/verify_pw_${ARCH}" verify_pw.go
+      - go build -o "./out/verify_pw_${GOARCH}" verify_pw.go
   build-pureftpd-authd-plugin_arm64:
     group: build_binaries
     image: golang:1.21.5
@@ -28,7 +28,7 @@ steps:
     commands:
       - mkdir -p ./out
       - go mod tidy
-      - go build -o "./out/verify_pw_${ARCH}" verify_pw.go
+      - go build -o "./out/verify_pw_${GOARCH}" verify_pw.go
   build-pureftpd-authd-plugin_arm:
     group: build_binaries
     image: golang:1.21.5
@@ -38,7 +38,7 @@ steps:
     commands:
       - mkdir -p ./out
       - go mod tidy
-      - go build -o "./out/verify_pw_${ARCH}" verify_pw.go
+      - go build -o "./out/verify_pw_${GOARCH}" verify_pw.go
   release-to-github:
     image: woodpeckerci/plugin-github-release
     settings:
