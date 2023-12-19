@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.0.6](https://github.com/psych0d0g/pure-ftpd-paperless-dbauth/releases/tag/0.0.6) - 2023-12-19
+
+### ❤️ Thanks to all contributors! ❤️
+
+@Lukas Wingerberg
+
+### Misc
+
+- Update README.md ([e3365cd](https://github.com/psych0d0g/pure-ftpd-paperless-dbauth/commit/e3365cd7864a5ca7e281699f331b0b8967c4caaf))
+
 ## [0.0.5](https://github.com/psych0d0g/pure-ftpd-paperless-dbauth/releases/tag/0.0.5) - 2023-12-19
 
 ### ❤️ Thanks to all contributors! ❤️
