@@ -1,6 +1,6 @@
 when:
   branch: ${CI_REPO_DEFAULT_BRANCH}
-  event: [push]
+  event: [push, pull_request]
 services:
   database-mysql:
     image: mysql
