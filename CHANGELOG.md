@@ -8,6 +8,7 @@
 
 ### Misc
 
+- add contribution notes to readme ([1513d18](https://github.com/psych0d0g/pure-ftpd-paperless-dbauth/commit/1513d185bada4224fc013fd53dfaed9b602dd969))
 - build and test on PR ([c488d93](https://github.com/psych0d0g/pure-ftpd-paperless-dbauth/commit/c488d931ba3488e388dd7bfaa717248c856e8cf8))
 - Update README.md ([e3365cd](https://github.com/psych0d0g/pure-ftpd-paperless-dbauth/commit/e3365cd7864a5ca7e281699f331b0b8967c4caaf))
 
