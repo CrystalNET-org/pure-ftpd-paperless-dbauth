@@ -1,5 +1,6 @@
 # Pure-FTPd Authd Database Authenticator
 [![status-badge](https://ci.cluster.lan.crystalnet.org/api/badges/5/status.svg)](https://ci.cluster.lan.crystalnet.org/repos/5)
+![GitHub release (with filter)](https://img.shields.io/github/v/release/psych0d0g/pure-ftpd-paperless-dbauth)
 
 This small Go program is designed to be plugged into Pure-FTPd's authd program, providing authentication against a Paperless-NGX MariaDB or PostgreSQL database.
 
