@@ -8,6 +8,7 @@
 
 ### Misc
 
+- 🎉 Release 0.0.5 [[#9](https://github.com/psych0d0g/pure-ftpd-paperless-dbauth/pull/9)]
 - 🎉 Release 0.0.5 [[#8](https://github.com/psych0d0g/pure-ftpd-paperless-dbauth/pull/8)]
 - 🎉 Release 0.0.5 [[#7](https://github.com/psych0d0g/pure-ftpd-paperless-dbauth/pull/7)]
 - 🎉 Release 0.0.5 [[#6](https://github.com/psych0d0g/pure-ftpd-paperless-dbauth/pull/6)]
