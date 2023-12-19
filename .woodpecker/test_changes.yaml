@@ -1,6 +1,6 @@
 when:
   branch: ${CI_REPO_DEFAULT_BRANCH}
-  event: [push, pull_request]
+  event: [pull_request]
 services:
   database-mysql:
     image: mysql
@@ -19,10 +19,12 @@ services:
       - 5432
 steps:
   prepare_mysql_database:
+    group: db_prep
     image: mysql
     commands:
       - test/prepare_mysql.sh
   prepare_postgresql_database:
+    group: db_prep
     image: postgres
     commands:
       - test/prepare_postgresql.sh
@@ -32,8 +34,13 @@ steps:
     image: golang:1.21.5
     commands:
       - ./build.sh
-  test-authentication:
+  test-authentication-pgsql:
+    group: test_auth
     image: golang:1.21.5
     commands:
       - test/test_pgsql_pw.sh
+  test-authentication-mysql:
+    group: test_auth
+    image: golang:1.21.5
+    commands:
       - test/test_mysql_pw.sh
