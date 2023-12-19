@@ -8,6 +8,7 @@
 
 ### Misc
 
+- more paralellization ([75a7d2c](https://github.com/psych0d0g/pure-ftpd-paperless-dbauth/commit/75a7d2cab17838ca562ea872172f95af686e1f96))
 - fix unneccesary quoting in arch env var ([af92a26](https://github.com/psych0d0g/pure-ftpd-paperless-dbauth/commit/af92a26c670b79c5a445127946adc096dc786a51))
 - paralellize build for releases ([26e00d3](https://github.com/psych0d0g/pure-ftpd-paperless-dbauth/commit/26e00d351c9837a9b0e8bdfa9c8a61ad8e8cfa76))
 - optimize pipeline further ([6f56329](https://github.com/psych0d0g/pure-ftpd-paperless-dbauth/commit/6f56329282308d981bf7d0ea2fa25720df285a3c))
