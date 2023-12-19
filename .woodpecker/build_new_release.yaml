@@ -4,7 +4,7 @@ steps:
     image: golang:1.21.5
     environment:
       - GOOS=linux
-      - GOARCH="amd64"
+      - GOARCH=amd64
     commands:
       - mkdir ./out
       - go mod tidy
@@ -14,7 +14,7 @@ steps:
     image: golang:1.21.5
     environment:
       - GOOS=linux
-      - GOARCH="386"
+      - GOARCH=386
     commands:
       - mkdir ./out
       - go mod tidy
@@ -24,7 +24,7 @@ steps:
     image: golang:1.21.5
     environment:
       - GOOS=linux
-      - GOARCH="arm64"
+      - GOARCH=arm64
     commands:
       - mkdir ./out
       - go mod tidy
@@ -34,7 +34,7 @@ steps:
     image: golang:1.21.5
     environment:
       - GOOS=linux
-      - GOARCH="arm"
+      - GOARCH=arm
     commands:
       - mkdir ./out
       - go mod tidy
