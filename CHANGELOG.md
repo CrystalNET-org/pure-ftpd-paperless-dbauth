@@ -8,6 +8,7 @@
 
 ### Misc
 
+- paralellize build for releases ([26e00d3](https://github.com/psych0d0g/pure-ftpd-paperless-dbauth/commit/26e00d351c9837a9b0e8bdfa9c8a61ad8e8cfa76))
 - optimize pipeline further ([6f56329](https://github.com/psych0d0g/pure-ftpd-paperless-dbauth/commit/6f56329282308d981bf7d0ea2fa25720df285a3c))
 - optimize pipeline ([27c09cb](https://github.com/psych0d0g/pure-ftpd-paperless-dbauth/commit/27c09cbed2c9140a40f4dab5fae1b48a66dff149))
 - optimize pipeline ([f92ff1d](https://github.com/psych0d0g/pure-ftpd-paperless-dbauth/commit/f92ff1d6bc11e829865a569710487d151daffe0c))
