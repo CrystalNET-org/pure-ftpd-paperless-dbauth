@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.0.8](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/releases/tag/0.0.8) - 2024-10-28
+
+### ❤️ Thanks to all contributors! ❤️
+
+@dependabot[bot]
+
+### Misc
+
+- Bump golang.org/x/crypto from 0.24.0 to 0.27.0 [[#28](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/pull/28)]
+- Bump golang.org/x/crypto from 0.22.0 to 0.24.0 [[#25](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/pull/25)]
+- Bump github.com/go-sql-driver/mysql from 1.7.1 to 1.8.1 [[#22](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/pull/22)]
+- Bump golang.org/x/crypto from 0.18.0 to 0.22.0 [[#23](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/pull/23)]
+
 ## [0.0.7](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/releases/tag/0.0.7) - 2024-01-20
 
 ### ❤️ Thanks to all contributors! ❤️
