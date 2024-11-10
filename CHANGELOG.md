@@ -1,13 +1,14 @@
 # Changelog
 
-## [0.0.9](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/releases/tag/0.0.9) - 2024-11-04
+## [0.0.9](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/releases/tag/0.0.9) - 2024-11-10
 
 ### ❤️ Thanks to all contributors! ❤️
 
-@dependabot[bot]
+@Lukas Wingerberg, @dependabot[bot]
 
 ### Misc
 
+- disable cgo and update go image ([ac58165](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/commit/ac58165699f0de78b68d7f6776d4133589e8a457))
 - Bump golang.org/x/crypto from 0.27.0 to 0.28.0 [[#31](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/pull/31)]
 
 ## [0.0.8](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/releases/tag/0.0.8) - 2024-10-28
