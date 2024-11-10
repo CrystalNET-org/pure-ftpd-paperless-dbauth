@@ -32,39 +32,39 @@ steps:
       - PGPASSWORD=example
   build-test-pureftpd-authd-plugin_x86_64:
     group: test_prep
-    image: golang:1.21.5
+    image: golang:1.23.2
     commands:
       - mkdir -p ./out
-      - GOOS=linux GOARCH=amd64 go mod tidy
-      - GOOS=linux GOARCH=amd64 go build -o "./out/verify_pw_amd64" verify_pw.go
+      - GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go mod tidy
+      - GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o "./out/verify_pw_amd64" verify_pw.go
   build-test-pureftpd-authd-plugin_x86:
     group: test_prep
-    image: golang:1.21.5
+    image: golang:1.23.2
     commands:
       - mkdir -p ./out
-      - GOOS=linux GOARCH=386 go mod tidy
-      - GOOS=linux GOARCH=386 go build -o "./out/verify_pw_i386" verify_pw.go
+      - GOOS=linux GOARCH=386 CGO_ENABLED=0 go mod tidy
+      - GOOS=linux GOARCH=386 CGO_ENABLED=0 go build -o "./out/verify_pw_i386" verify_pw.go
   build-test-pureftpd-authd-plugin_arm64:
     group: test_prep
-    image: golang:1.21.5
+    image: golang:1.23.2
     commands:
       - mkdir -p ./out
-      - GOOS=linux GOARCH=arm64 go mod tidy
-      - GOOS=linux GOARCH=arm64 go build -o "./out/verify_pw_arm64" verify_pw.go
+      - GOOS=linux GOARCH=arm64 CGO_ENABLED=0 go mod tidy
+      - GOOS=linux GOARCH=arm64 CGO_ENABLED=0 go build -o "./out/verify_pw_arm64" verify_pw.go
   build-test-pureftpd-authd-plugin_arm:
     group: test_prep
-    image: golang:1.21.5
+    image: golang:1.23.2
     commands:
       - mkdir -p ./out
-      - GOOS=linux GOARCH=arm go mod tidy
-      - GOOS=linux GOARCH=arm go build -o "./out/verify_pw_arm" verify_pw.go
+      - GOOS=linux GOARCH=arm CGO_ENABLED=0 go mod tidy
+      - GOOS=linux GOARCH=arm CGO_ENABLED=0 go build -o "./out/verify_pw_arm" verify_pw.go
   test-authentication-pgsql:
     group: test_auth
-    image: golang:1.21.5
+    image: golang:1.23.2
     commands:
       - test/test_pgsql_pw.sh
   test-authentication-mysql:
     group: test_auth
-    image: golang:1.21.5
+    image: golang:1.23.2
     commands:
       - test/test_mysql_pw.sh
