@@ -8,6 +8,7 @@
 
 ### Misc
 
+- fix host ([d5ad6ee](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/commit/d5ad6ee6fef4ef7c644c298ef07bc9b7b63a0f86))
 - fix host ([93ac233](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/commit/93ac233bab9ab289576b7d39c137fceeb03f3fed))
 - fix tests ([ae9a697](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/commit/ae9a697c9bf1a0482d16c0e5dbc179d7f71f4920))
 - debugging ([9c65fc9](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/commit/9c65fc98cffe69ff28076d8964706401dff60bea))
