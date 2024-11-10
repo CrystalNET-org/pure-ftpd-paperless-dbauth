@@ -19,52 +19,46 @@ services:
       - 5432
 steps:
   prepare_mysql_database:
-    group: test_prep
     image: mysql
     commands:
       - test/prepare_mysql.sh
   prepare_postgresql_database:
-    group: test_prep
     image: postgres
     commands:
       - test/prepare_postgresql.sh
     environment:
       - PGPASSWORD=example
   build-test-pureftpd-authd-plugin_x86_64:
-    group: test_prep
     image: golang:1.23.2
     commands:
       - mkdir -p ./out
       - GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go mod tidy
       - GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o "./out/verify_pw_amd64" verify_pw.go
   build-test-pureftpd-authd-plugin_x86:
-    group: test_prep
     image: golang:1.23.2
     commands:
       - mkdir -p ./out
       - GOOS=linux GOARCH=386 CGO_ENABLED=0 go mod tidy
       - GOOS=linux GOARCH=386 CGO_ENABLED=0 go build -o "./out/verify_pw_i386" verify_pw.go
   build-test-pureftpd-authd-plugin_arm64:
-    group: test_prep
     image: golang:1.23.2
     commands:
       - mkdir -p ./out
       - GOOS=linux GOARCH=arm64 CGO_ENABLED=0 go mod tidy
       - GOOS=linux GOARCH=arm64 CGO_ENABLED=0 go build -o "./out/verify_pw_arm64" verify_pw.go
   build-test-pureftpd-authd-plugin_arm:
-    group: test_prep
     image: golang:1.23.2
     commands:
       - mkdir -p ./out
       - GOOS=linux GOARCH=arm CGO_ENABLED=0 go mod tidy
       - GOOS=linux GOARCH=arm CGO_ENABLED=0 go build -o "./out/verify_pw_arm" verify_pw.go
   test-authentication-pgsql:
-    group: test_auth
+    depends_on: [prepare_postgresql_database, build-test-pureftpd-authd-plugin_x86_64, build-test-pureftpd-authd-plugin_x86, build-test-pureftpd-authd-plugin_arm64, build-test-pureftpd-authd-plugin_arm]
     image: golang:1.23.2
     commands:
       - test/test_pgsql_pw.sh
   test-authentication-mysql:
-    group: test_auth
+    depends_on: [prepare_mysql_database, build-test-pureftpd-authd-plugin_x86_64, build-test-pureftpd-authd-plugin_x86, build-test-pureftpd-authd-plugin_arm64, build-test-pureftpd-authd-plugin_arm]
     image: golang:1.23.2
     commands:
       - test/test_mysql_pw.sh
