@@ -8,6 +8,7 @@
 
 ### Misc
 
+- attemt to fix pgsql ([e2cdf48](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/commit/e2cdf4881c4c53954ec3f51c9fce4245a73db575))
 - attemt to fix pgsql ([e0c0219](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/commit/e0c0219cf949d2b1aa29e13cc6f3018055658496))
 - update to dependencies ([1516657](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/commit/1516657552d3f324eacddba294f41dc947e0b928))
 - update to dependencies ([345078f](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/commit/345078fc56d4ec02128646410ed09bba8259d8ac))
