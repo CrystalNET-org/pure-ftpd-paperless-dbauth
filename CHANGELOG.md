@@ -8,6 +8,7 @@
 
 ### Misc
 
+- update to dependencies ([1516657](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/commit/1516657552d3f324eacddba294f41dc947e0b928))
 - update to dependencies ([345078f](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/commit/345078fc56d4ec02128646410ed09bba8259d8ac))
 - disable cgo and update go image ([ac58165](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/commit/ac58165699f0de78b68d7f6776d4133589e8a457))
 - Bump golang.org/x/crypto from 0.27.0 to 0.28.0 [[#31](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/pull/31)]
