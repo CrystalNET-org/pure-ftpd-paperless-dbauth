@@ -1,27 +1,23 @@
 steps:
   build-pureftpd-authd-plugin_x86_64:
-    group: build_binaries
     image: golang:1.23.2
     commands:
       - mkdir -p ./out
       - GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go mod tidy
       - GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o "./out/verify_pw_amd64" verify_pw.go
   build-pureftpd-authd-plugin_x86:
-    group: build_binaries
     image: golang:1.23.2
     commands:
       - mkdir -p ./out
       - GOOS=linux GOARCH=386 CGO_ENABLED=0 go mod tidy
       - GOOS=linux GOARCH=386 CGO_ENABLED=0 go build -o "./out/verify_pw_i386" verify_pw.go
   build-pureftpd-authd-plugin_arm64:
-    group: build_binaries
     image: golang:1.23.2
     commands:
       - mkdir -p ./out
       - GOOS=linux GOARCH=arm64 CGO_ENABLED=0 go mod tidy
       - GOOS=linux GOARCH=arm64 CGO_ENABLED=0 go build -o "./out/verify_pw_arm64" verify_pw.go
   build-pureftpd-authd-plugin_arm:
-    group: build_binaries
     image: golang:1.23.2
     commands:
       - mkdir -p ./out
@@ -29,6 +25,7 @@ steps:
       - GOOS=linux GOARCH=arm CGO_ENABLED=0 go build -o "./out/verify_pw_arm" verify_pw.go
   release-to-github:
     image: woodpeckerci/plugin-github-release
+    depends_on: [build-pureftpd-authd-plugin_x86_64, build-pureftpd-authd-plugin_x86, build-pureftpd-authd-plugin_arm64, build-pureftpd-authd-plugin_arm]
     settings:
       files:
         - out/verify_pw*
