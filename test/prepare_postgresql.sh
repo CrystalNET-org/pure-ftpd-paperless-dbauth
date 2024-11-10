@@ -1,5 +1,5 @@
 #!/bin/bash -x
-
+env
 psql_host=$(env | grep PORT_5432_TCP_ADDR | cut -d "=" -f 2 | tail -n1)
 echo "Waiting for postgresql to launch on ${psql_host}:5432..."
 
