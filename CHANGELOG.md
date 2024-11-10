@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.0.9](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/releases/tag/0.0.9) - 2024-11-10
+
+### ❤️ Thanks to all contributors! ❤️
+
+@Lukas Wingerberg, @dependabot[bot]
+
+### Misc
+
+- fix host ([d5ad6ee](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/commit/d5ad6ee6fef4ef7c644c298ef07bc9b7b63a0f86))
+- fix host ([93ac233](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/commit/93ac233bab9ab289576b7d39c137fceeb03f3fed))
+- fix tests ([ae9a697](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/commit/ae9a697c9bf1a0482d16c0e5dbc179d7f71f4920))
+- debugging ([9c65fc9](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/commit/9c65fc98cffe69ff28076d8964706401dff60bea))
+- attemt to fix pgsql ([e2cdf48](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/commit/e2cdf4881c4c53954ec3f51c9fce4245a73db575))
+- attemt to fix pgsql ([e0c0219](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/commit/e0c0219cf949d2b1aa29e13cc6f3018055658496))
+- update to dependencies ([1516657](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/commit/1516657552d3f324eacddba294f41dc947e0b928))
+- update to dependencies ([345078f](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/commit/345078fc56d4ec02128646410ed09bba8259d8ac))
+- disable cgo and update go image ([ac58165](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/commit/ac58165699f0de78b68d7f6776d4133589e8a457))
+- Bump golang.org/x/crypto from 0.27.0 to 0.28.0 [[#31](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/pull/31)]
+
 ## [0.0.8](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/releases/tag/0.0.8) - 2024-10-28
 
 ### ❤️ Thanks to all contributors! ❤️
