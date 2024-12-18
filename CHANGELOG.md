@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.0.10](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/releases/tag/0.0.10) - 2024-12-18
+
+### ❤️ Thanks to all contributors! ❤️
+
+@dependabot[bot]
+
+### Misc
+
+- Bump golang.org/x/crypto from 0.28.0 to 0.31.0 [[#36](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/pull/36)]
+
 ## [0.0.9](https://github.com/CrystalNET-org/pure-ftpd-paperless-dbauth/releases/tag/0.0.9) - 2024-11-10
 
 ### ❤️ Thanks to all contributors! ❤️
